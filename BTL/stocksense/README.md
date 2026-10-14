@@ -143,3 +143,4 @@ Toàn bộ dữ liệu mô phỏng được lưu bền vững qua `localStorage`
 |---|---|---|---|---|
 | SV1 | `Nguyễn Quang Huy` | `2551060630` | `67CNTT2` | Làm tất | 
 Chi tiết mục tiêu, nhiệm vụ, CRUD/trạng thái, tính năng AI và công việc dự kiến của từng màn hình xem tại **Bảng kiểm kê màn hình StockSense**.
+**Link video:** https://youtu.be/y_aBBF9NrR8?si=g8WHXPFWCAdgggz9
