@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng ký StockSense</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body{margin:0;font-family:'Sora',sans-serif;color:var(--text);min-height:100vh;position:relative;overflow-x:hidden;background:linear-gradient(135deg,#dbeafe 0%,#eff6ff 40%,#f0f9ff 100%);}
+  .bg-svg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;opacity:.5;z-index:0;}
+  .login-wrap{position:relative;z-index:2;display:flex;justify-content:center;padding:48px 20px;}
+  .login-card{width:100%;max-width:460px;background:#fff;border-radius:20px;box-shadow:0 20px 60px rgba(37,99,235,.18);padding:36px 34px;box-sizing:border-box;}
+  .logo-wrap{display:flex;justify-content:center;margin-bottom:16px;}
+  .login-card h1{font-size:24px;font-weight:700;text-align:center;margin:0 0 6px;}
+  .login-sub{text-align:center;color:var(--muted);font-size:14px;margin:0 0 24px;}
+  .field-wrap{position:relative;margin-bottom:4px;}
+  .field-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);z-index:1;}
+  .select-inp{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:pointer;}
+  .select-arrow{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;}
+  .toggle-pw{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--muted);padding:4px;z-index:2;}
+  .login-btn{width:100%;margin-top:20px;padding:13px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Sora',sans-serif;}
+  .login-btn:hover{background:#1d4ed8;}
+  .login-btn:disabled{opacity:.7;cursor:not-allowed;}
+  .row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:480px){.row-2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<svg class="bg-svg" preserveAspectRatio="none" viewBox="0 0 1400 800">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#93c5fd" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#bae6fd" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="520" width="1400" height="280" fill="url(#g1)"/>
+  <g stroke="#3b82f6" stroke-width="1" opacity=".25">
+    <line x1="0" y1="560" x2="1400" y2="560"/>
+    <line x1="0" y1="620" x2="1400" y2="620"/>
+    <line x1="0" y1="700" x2="1400" y2="700"/>
+    <line x1="200" y1="520" x2="600" y2="800"/>
+    <line x1="500" y1="520" x2="900" y2="800"/>
+    <line x1="800" y1="520" x2="1200" y2="800"/>
+    <line x1="1100" y1="520" x2="1400" y2="720"/>
+  </g>
+  <circle cx="120" cy="680" r="4" fill="#3b82f6" opacity=".7"/>
+  <circle cx="1280" cy="720" r="4" fill="#0ea5e9" opacity=".7"/>
+  <circle cx="700" cy="100" r="3" fill="#60a5fa" opacity=".5"/>
+  <circle cx="1100" cy="200" r="3" fill="#38bdf8" opacity=".5"/>
+</svg>
+<div class="login-wrap">
+  <div class="login-card reveal">
+    <div class="logo-wrap">
+      <svg width="52" height="52" viewBox="0 0 56 56" fill="none">
+        <path d="M28 6L48 16V40L28 50L8 40V16L28 6Z" stroke="#1e3a8a" stroke-width="2.5" fill="#eff6ff"/>
+        <path d="M28 6V28M28 28L48 16M28 28L8 16" stroke="#1e3a8a" stroke-width="2.5"/>
+        <rect x="18" y="30" width="8" height="8" rx="1.5" fill="#2563eb"/>
+        <rect x="28" y="34" width="8" height="8" rx="1.5" fill="#3b82f6"/>
+        <rect x="23" y="40" width="8" height="8" rx="1.5" fill="#60a5fa"/>
+      </svg>
+    </div>
+    <h1>Tạo tài khoản StockSense</h1>
+    <p class="login-sub">Bắt đầu điều hành tồn kho thông minh</p>
+    <form id="registerForm" novalidate>
+      <div class="field-row">
+        <div class="field-wrap">
+          <span class="field-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+          <input type="text" id="regName" class="inp" placeholder="Họ và tên" autocomplete="off">
+        </div>
+        <div id="nameErr" class="err-msg"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span></span></div>
+      </div>
+      <div class="field-row" style="margin-top:14px;">
+        <div class="field-wrap">
+          <span class="field-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+          <input type="text" id="regEmail" class="inp" placeholder="Email công việc" autocomplete="off">
+        </div>
+        <div id="emailErr" class="err-msg"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span></span></div>
+      </div>
+      <div class="row-2" style="margin-top:14px;">
+        <div>
+          <div class="field-wrap">
+            <span class="field-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+            <input type="password" id="regPw" class="inp" placeholder="Mật khẩu">
+            <button type="button" class="toggle-pw" data-target="regPw"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <div id="pwErr" class="err-msg"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span></span></div>
+        </div>
+        <div>
+          <div class="field-wrap">
+            <span class="field-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><path d="m9 16 2 2 4-4"/></svg></span>
+            <input type="password" id="regPw2" class="inp" placeholder="Xác nhận mật khẩu">
+            <button type="button" class="toggle-pw" data-target="regPw2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <div id="pw2Err" class="err-msg"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span></span></div>
+        </div>
+      </div>
+      <div class="pw-bar" style="margin-top:10px;"><span id="pwBar"></span></div>
+      <div class="field-row" style="margin-top:14px;">
+        <div class="field-wrap">
+          <span class="field-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7Z"/></svg></span>
+          <select id="regRole" class="inp select-inp">
+            <option value="">Chọn vai trò trong kho</option>
+            <option value="admin">Quản trị viên</option>
+            <option value="supervisor">Giám sát kho</option>
+            <option value="worker">Nhân viên kho</option>
+            <option value="planner">Điều phối nhập hàng</option>
+          </select>
+          <span class="select-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div id="roleErr" class="err-msg"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Vui lòng chọn vai trò</span></div>
+      </div>
+      <div id="regGlobal" class="global-msg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span id="regGlobalText"></span></div>
+      <button type="submit" id="regBtn" class="login-btn">
+        <span id="regBtnText">Tạo tài khoản</span>
+      </button>
+    </form>
+    <div class="auth-foot">Đã có tài khoản? <a class="link" href="index.html">Đăng nhập ngay</a></div>
+  </div>
+</div>
+<script src="js/script.js"></script>
+<script src="js/pages.js"></script>
+</body>
+</html>
