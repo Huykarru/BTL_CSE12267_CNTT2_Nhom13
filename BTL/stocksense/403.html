@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>403 - Truy cập bị từ chối | StockSense</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body{margin:0;font-family:'Sora',sans-serif;color:var(--text);min-height:100vh;position:relative;overflow-x:hidden;background:linear-gradient(135deg,#dbeafe 0%,#eff6ff 40%,#f0f9ff 100%);display:flex;align-items:center;justify-content:center;padding:40px 20px;box-sizing:border-box;}
+  .bg-svg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;opacity:.5;z-index:0;}
+  .err-card{position:relative;z-index:2;width:100%;max-width:480px;background:#fff;border-radius:20px;box-shadow:0 20px 60px rgba(37,99,235,.18);padding:44px 40px;text-align:center;box-sizing:border-box;}
+  .err-icon{width:72px;height:72px;border-radius:50%;background:var(--danger-soft);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;color:var(--danger);}
+  .err-card h1{font-size:22px;font-weight:700;margin:14px 0 8px;}
+  .err-card p{font-size:14px;color:var(--muted);line-height:1.7;margin:0 0 26px;}
+  .btn-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+<svg class="bg-svg" preserveAspectRatio="none" viewBox="0 0 1400 800">
+  <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#93c5fd" stop-opacity=".4"/><stop offset="1" stop-color="#bae6fd" stop-opacity="0"/></linearGradient></defs>
+  <rect x="0" y="520" width="1400" height="280" fill="url(#g1)"/>
+  <g stroke="#3b82f6" stroke-width="1" opacity=".25"><line x1="0" y1="560" x2="1400" y2="560"/><line x1="0" y1="620" x2="1400" y2="620"/><line x1="0" y1="700" x2="1400" y2="700"/></g>
+</svg>
+<div class="err-card reveal">
+  <div class="err-icon">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/><line x1="12" y1="15" x2="12" y2="18"/></svg>
+  </div>
+  <div class="err-code">403</div>
+  <h1>Truy cập bị từ chối</h1>
+  <p>Rất tiếc, tài khoản của bạn không có quyền truy cập vào trang này. Vui lòng liên hệ quản trị viên nếu bạn nghĩ đây là nhầm lẫn, hoặc quay lại bảng điều khiển.</p>
+  <div class="btn-row">
+    <a href="dashboard.html" class="btn btn-primary">Về bảng điều khiển</a>
+    <button class="btn btn-ghost" onclick="history.back()">Quay lại trang trước</button>
+  </div>
+  <div class="auth-foot" style="margin-top:22px;">Cần trợ giúp? <a class="link" href="mailto:admin@stocksense.vn">Liên hệ quản trị viên</a></div>
+</div>
+</body>
+</html>

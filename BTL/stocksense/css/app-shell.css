@@ -1,0 +1,34 @@
+/* app-shell.css — Layout ứng dụng: dashboard + trang con profile/settings/notifications */
+body.app{margin:0;font-family:'Sora',sans-serif;color:var(--text);background:#f1f5f9;min-height:100vh;}
+
+/* Dashboard shell */
+.app-layout{display:flex;min-height:100vh;}
+.app-sidebar{width:240px;background:#fff;border-right:1px solid var(--border);padding:20px 14px;}
+.app-main{flex:1;min-width:0;padding:0;}
+.app-topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;background:#fff;border-bottom:1px solid var(--border);}
+.app-content{padding:24px 28px;}
+
+/* Sub-page shell (profile / settings / notifications) */
+.sub-layout{display:flex;min-height:100vh;flex-wrap:wrap;}
+.sub-sidebar{width:240px;min-width:240px;background:#fff;border-right:1px solid var(--border);padding:20px 14px;}
+.sub-sidebar-logo{display:flex;align-items:center;gap:10px;padding:0 8px 20px;border-bottom:1px solid var(--border);margin-bottom:16px;}
+.sub-sidebar-logo .name{font-weight:700;font-size:15px;line-height:1.2;}
+.sub-sidebar-logo .sub{font-size:10px;color:var(--muted);}
+.sub-nav{display:flex;flex-direction:column;gap:4px;}
+.sub-ai-box{margin-top:24px;padding:14px;background:var(--accent-soft);border-radius:12px;}
+.sub-ai-box .t{font-size:12px;font-weight:600;margin-bottom:4px;}
+.sub-ai-box .d{font-size:11px;color:var(--muted);margin-bottom:10px;}
+.sub-ai-box a{display:block;text-align:center;padding:8px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Sora',sans-serif;text-decoration:none;}
+.sub-main{flex:1;min-width:300px;padding:24px 28px;}
+.sub-topbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border);}
+.sub-topbar h2{font-size:22px;font-weight:700;margin:0;}
+.sub-topbar p{font-size:13px;color:var(--muted);margin:4px 0 0;}
+.sub-topbar-right{display:flex;align-items:center;gap:12px;}
+.sub-user-info{text-align:right;}
+.sub-user-info .n{font-size:14px;font-weight:600;}
+.sub-user-info .r{font-size:11px;color:var(--muted);}
+.sub-avatar{width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;text-decoration:none;flex-shrink:0;}
+.sub-content{max-width:980px;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.stack{display:flex;flex-direction:column;gap:18px;}
+@media(max-width:760px){.grid-2{grid-template-columns:1fr;}.sub-sidebar{width:100%;min-width:0;}}
